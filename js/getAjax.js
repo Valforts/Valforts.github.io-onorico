@@ -28,21 +28,33 @@ fetch('https://oc-p5-api.herokuapp.com/api/cameras')
 .then(response => response.json())
 .then(data => {
   for(let i in data){
+
     let newCol = document.createElement("div");
     newCol.classList.add("col-12", "col-lg-4");
+
     let newCard = document.createElement("div");
     newCard.classList.add("card", "mb-4");
+
     let newCardImg = document.createElement("img");
     newCardImg.classList.add("card-img-top");
+
     let newCardBody = document.createElement("div");
     newCardBody.classList.add("card-body");
+
     let newCardTitle = document.createElement("h5");
     newCardTitle.classList.add("card-title");
+
     let newCardTexte = document.createElement("p");
     newCardTexte.classList.add("card-text");
+
     let newLink = document.createElement("a");
     newLink.classList.add("stretched-link");
+
+    //le prix est à ajouter//
+    let newLink = document.createElement("p");
+
     newLink.href ="#"
+
     let mainElt = document.getElementById("main")
 
     mainElt.appendChild(newCol);
@@ -56,8 +68,9 @@ fetch('https://oc-p5-api.herokuapp.com/api/cameras')
     newCardTitle.textContent = data[i].name;
     newCardImg.setAttribute("src", data[i].imageUrl);
     newCardTexte.textContent = data[i].description;
-
 }
 
 })
 .catch(error => console.error(error))
+
+console.log(window.location);
