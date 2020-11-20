@@ -1,34 +1,11 @@
-/*
-let nameElt = document.getElementsByClassName("card-title");
-let imgElt = document.getElementsByClassName("card-img-top");
-let txtElt = document.getElementsByClassName("card-text");
-let testElt = document.getElementById("test");
-
-
-  var request = new XMLHttpRequest();
-  request.onreadystatechange = function() {
-      if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-          var response = JSON.parse(this.responseText);
-          for(let i in response){
-          nameElt[i].textContent = response[i].name;
-          imgElt[i].setAttribute("src", response[i].imageUrl);
-          txtElt[i].textContent = response[i].description;
-      }
-    }
-  };
-
-  request.open("GET", "https://oc-p5-api.herokuapp.com/api/cameras");
-  request.send();
-  */
-
-// BON EXEMPLE DE FETCH
-
+// Utilisation de fetch pour simplifier l'utilisation des promesses //
 
 fetch('https://oc-p5-api.herokuapp.com/api/cameras')
 .then(response => response.json())
 .then(data => {
-  for(let i in data){
 
+  for(let i in data){
+    // Création des élément composants la card //
     let newCol = document.createElement("div");
     newCol.classList.add("col-12", "col-lg-4");
 
@@ -44,33 +21,36 @@ fetch('https://oc-p5-api.herokuapp.com/api/cameras')
     let newCardTitle = document.createElement("h5");
     newCardTitle.classList.add("card-title");
 
+    let newCardPrice = document.createElement("p");
+    newCardPrice.classList.add("card-text");
+
     let newCardTexte = document.createElement("p");
     newCardTexte.classList.add("card-text");
 
     let newLink = document.createElement("a");
     newLink.classList.add("stretched-link");
 
-    //le prix est à ajouter//
-    let newLink = document.createElement("p");
-
-    newLink.href ="#"
-
+    newLink.href ="product.html?id=" + data[i]._id;
     let mainElt = document.getElementById("main")
 
+    // Création et affichage de la card //
     mainElt.appendChild(newCol);
     newCol.appendChild(newCard);
     newCard.appendChild(newCardImg);
     newCard.appendChild(newCardBody);
     newCardBody.appendChild(newCardTitle);
+    newCardBody.appendChild(newCardPrice);
     newCardBody.appendChild(newCardTexte);
     newCardBody.appendChild(newLink);
 
+    // Remplissage des informations de la card //
+    let price = data[i]
     newCardTitle.textContent = data[i].name;
     newCardImg.setAttribute("src", data[i].imageUrl);
+    newCardPrice.textContent = data[i].price + "€";
     newCardTexte.textContent = data[i].description;
+
 }
 
 })
 .catch(error => console.error(error))
-
-console.log(window.location);
