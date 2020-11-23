@@ -51,25 +51,61 @@
           <h1>Votre panier</h1>
         </div>
       </div>
+
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputNom">Nom *</label>
+            <input required type="text" class="form-control" id="inputNom">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPrenom">Prénom *</label>
+            <input required type="text" class="form-control" id="inputPrenom">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddresse">Addresse *</label>
+          <input required type="text" class="form-control" id="inputAddresse" placeholder="55, rue du Faubourg-Saint-Honoré">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Code postal *</label>
+            <input required type="text" class="form-control" id="inputCity">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputVille">Ville *</label>
+            <input required type="text" class="form-control" id="inputVille">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail">Adresse électronique *</label>
+          <input required type="email" class="form-control" id="inputEmail" placeholder="your.email@exemple.com">
+        </div>
+        <button type="submit" class="btn btn-primary mb-4">Sign in</button>
+      </form>
+
+      </div>
     </div>
   <!-- Fin de la navbar -->
 
 
-  <div class="container-fluid pink">
-    <div class="container">
-      <div class="row footer mt-3">
-        <div class="col">
-          <ul class="list-inline text-center my-auto p-2 ">
-            <li class="list-inline-item"><a class="text-dark" href="#">À propos</a></li>
-            <li class="list-inline-item">&middot;</li>
-            <li class="list-inline-item"><a class="text-dark"href="#">Vie privée</a></li>
-            <li class="list-inline-item">&middot;</li>
-            <li class="list-inline-item"><a class="text-dark"href="#">Conditions d'utilisations</a></li>
-          </ul>
+  <footer>
+    <div class="container-fluid pink fixed-bottom">
+      <div class="container">
+        <div class="row footer">
+          <div class="col">
+            <ul class="list-inline text-center my-auto p-2">
+              <li class="list-inline-item"><a class="text-dark" href="#">À propos</a></li>
+              <li class="list-inline-item">&middot;</li>
+              <li class="list-inline-item"><a class="text-dark"href="#">Vie privée</a></li>
+              <li class="list-inline-item">&middot;</li>
+              <li class="list-inline-item"><a class="text-dark"href="#">Conditions d'utilisations</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
