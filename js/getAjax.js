@@ -30,6 +30,7 @@ fetch('https://oc-p5-api.herokuapp.com/api/cameras')
     let newLink = document.createElement("a");
     newLink.classList.add("stretched-link");
 
+    // Création d'un lien sur chaque card avec l'id correspondant intégré a l'URL //
     newLink.href ="product.html?id=" + data[i]._id;
     let mainElt = document.getElementById("main")
 
@@ -47,7 +48,7 @@ fetch('https://oc-p5-api.herokuapp.com/api/cameras')
     let price = data[i]
     newCardTitle.textContent = data[i].name;
     newCardImg.setAttribute("src", data[i].imageUrl);
-    newCardPrice.textContent = data[i].price + "€";
+    newCardPrice.textContent = data[i].price/100 + "€";
     newCardTexte.textContent = data[i].description;
 
 }
