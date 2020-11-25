@@ -45,12 +45,12 @@ fetch('https://oc-p5-api.herokuapp.com/api/cameras')
     newCardBody.appendChild(newLink);
 
     // Remplissage des informations de la card //
-    let price = data[i]
+    let price = data[i];
     newCardTitle.textContent = data[i].name;
     newCardImg.setAttribute("src", data[i].imageUrl);
     newCardPrice.textContent = data[i].price/100 + "€";
     newCardTexte.textContent = data[i].description;
-
+    
 }
 
 })
