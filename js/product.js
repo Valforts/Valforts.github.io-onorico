@@ -46,7 +46,7 @@ function addBasketItem(){
     let imgElt = document.getElementById("img");
     let titleElt = document.getElementById("title");
     let selectElt = document.getElementById("inputOak");
-    let quantityElt = document.getElementById("quantitee");
+    let quantityElt = document.getElementById("quantity");
     let priceElt = document.getElementById("price");
 
     function Product(id, title,quantity, price, url){

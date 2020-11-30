@@ -27,7 +27,7 @@
             <a class="navbar-brand" href="index.html">
               <img src="img/logo.png" alt="logo Orinoco">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" >
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div id="navbarContent" class="collapse navbar-collapse">
@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-9">
+        <div class="col-12 col-lg-9">
           <table class="table">
             <thead>
               <tr>
@@ -62,68 +62,49 @@
                 <th scope="col">Sous-total</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row"><img src="img/vcam_1.jpg" style="width:100px; height:70px;" alt=""></th>
-                <td>Zurss 50S</td>
-                <td>2</td>
-                <td>499€</td>
-              </tr>
-              <tr>
-                <th scope="row"><img src="img/vcam_3.jpg" style="width:100px; height:70px;" alt=""></th>
-                <td>Hirsch 400DTS</td>
-                <td>1</td>
-                <td>3099€</td>
-              </tr>
-              <tr>
-                <th scope="row"><img src="img/vcam_2.jpg" style="width:100px; height:70px;" alt=""></th>
-                <td>Franck JS 105</td>
-                <td>1</td>
-                <td>2099€</td>
-              </tr>
-            </tbody>
+            <tbody id="tbody">  </tbody>
           </table>
         </div>
-        <div class="col-3 card text-center">
+        <div class="col-12 col-lg-3 card text-center">
           <div class="card-body">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><h5 class="card-title">TOTAL TTC</h5><h1 class="card-text text-center text-primary">6169€</h1></li>
-              <li class="list-group-item text-secondary "><h5>OU PAYER EN 3x :</h5> <h5>3 X 2056.33€</h5><p>(Frais de dossier inclus)</p> </li>
+              <li class="list-group-item"><h5 class="card-title">TOTAL TTC</h5><h1 id="sum" class="card-text text-center text-primary"></h1></li>
+              <li class="list-group-item text-secondary "><h5>OU PAYER EN 3x :</h5> <h5 id="spread"></h5><p>(Frais de dossier inclus)</p> </li>
+              <button id="btn" type="button" class="btn btn-warning" onclick="sendData({test:'ok'})">Valider ma commande</button>
             </ul>
           </div>
         </div>
       </div>
 
-      <form>
+      <form action="#" method="post">
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputNom">Nom *</label>
-            <input required type="text" class="form-control" id="inputNom">
+            <label for="inputName">Nom *</label>
+            <input required type="text" class="form-control" id="inputName" pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
           </div>
           <div class="form-group col-md-6">
-            <label for="inputPrenom">Prénom *</label>
-            <input required type="text" class="form-control" id="inputPrenom">
+            <label for="inputFirstName">Prénom *</label>
+            <input required type="text" class="form-control" id="inputFirstName" pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
           </div>
         </div>
         <div class="form-group">
           <label for="inputAddresse">Addresse *</label>
-          <input required type="text" class="form-control" id="inputAddresse" placeholder="55, rue du Faubourg-Saint-Honoré">
+          <input required type="text" class="form-control" id="inputAddresse" placeholder="55, rue du Faubourg-Saint-Honoré" pattern="[a-z*(é|è|à|ù)A-Z\d\s\-\,\#\.\+]">
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputCity">Code postal *</label>
-            <input required type="text" class="form-control" id="inputCity">
+            <label for="inputPostcode">Code postal *</label>
+            <input  required type="text" class="form-control" id="inputPostcode" pattern="([0-9]{5})$">
           </div>
           <div class="form-group col-md-6">
             <label for="inputVille">Ville *</label>
-            <input required type="text" class="form-control" id="inputVille">
+            <input required type="text" class="form-control" id="inputVille" pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
           </div>
         </div>
         <div class="form-group">
           <label for="inputEmail">Adresse électronique *</label>
-          <input required type="email" class="form-control" id="inputEmail" placeholder="your.email@exemple.com">
+          <input required type="email" class="form-control" id="inputEmail" placeholder="your.email@exemple.com" pattern="[a-zA-Z0-9_\.\+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-\.]+">
         </div>
-        <button type="submit" class="btn btn-warning">Valider ma commande</button>
       </form>
 
       </div>
@@ -151,7 +132,7 @@
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
+
     <script src ="js/panier.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
