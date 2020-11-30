@@ -4,6 +4,7 @@ function getId() {
     const id = param.replace("?id=", "");
     return id;
 }
+
  // Création d'une URL propre à l'item sélectionné afin de récupérer ses information via son ID //
 id = getId();
 let newAjaxUrl = "https://oc-p5-api.herokuapp.com/api/cameras/" +  id;
@@ -70,3 +71,12 @@ function addBasketItem(){
 }
 
 addBasketItem();
+
+function addToBasketConfirmation(){
+  let btnElt = document.getElementById("btn");
+  btnElt.addEventListener("click", function() {
+    alert("Votre article à été ajouté au panier");
+  })
+}
+
+addToBasketConfirmation();
