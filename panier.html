@@ -75,7 +75,7 @@
         </div>
       </div>
 
-      <form action="#" method="post">
+      <form  id="form" method="post">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputName">Nom *</label>
@@ -87,8 +87,8 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="inputAddresse">Addresse *</label>
-          <input required type="text" class="form-control" id="inputAddresse" placeholder="55, rue du Faubourg-Saint-Honoré" pattern="[a-z*(é|è|à|ù)A-Z\d\s\-\,\#\.\+]">
+          <label for="inputAddress">Adresse *</label>
+          <input required type="text" class="form-control" id="inputAddress" placeholder="55, rue du Faubourg-Saint-Honoré" pattern="[a-z*(é|è|à|ù)A-Z\d\s\-\,\#\.\+]">
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -96,15 +96,15 @@
             <input  required type="text" class="form-control" id="inputPostcode" pattern="([0-9]{5})$">
           </div>
           <div class="form-group col-md-6">
-            <label for="inputVille">Ville *</label>
-            <input required type="text" class="form-control" id="inputVille" pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
+            <label for="inputCity">Ville *</label>
+            <input required type="text" class="form-control" id="inputCity" pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
           </div>
         </div>
         <div class="form-group">
           <label for="inputEmail">Adresse électronique *</label>
           <input required type="email" class="form-control" id="inputEmail" placeholder="your.email@exemple.com" pattern="[a-zA-Z0-9_\.\+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-\.]+">
         </div>
-        <button id="btn" type="submit" class="btn btn-warning">Valider ma commande</button>
+        <button id="btn" type="submit" class="btn btn-warning"><a href="confirmation.html"></a>Valider ma commande</button>
       </form>
 
       </div>

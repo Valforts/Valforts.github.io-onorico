@@ -32,8 +32,57 @@ function fillBasket(){
         sumElt.textContent = sommeTotal + "€";
 
         let spreadElt = document.getElementById("spread");
-        spreadElt.textContent = "3X " + Number.parseFloat(sommeTotal/3).toPrecision(6);
+        spreadElt =  Number.parseFloat(sommeTotal/3).toPrecision(6);
+        spreadElt.textContent = "3X " + spreadElt;
   }
 
 }
 fillBasket();
+
+
+
+// Envoi des données au serveur //
+
+// Création du tableau "products" contenant les id des produits commandés //
+
+let products = [];
+for(let i in JSON.parse(localStorage.getItem("basketContent"))){
+  products.push(JSON.parse(localStorage.getItem("basketContent"))[i].id)
+};
+
+// Envoi des données du formulaire //
+
+let submitBtn = document.getElementById("btn");
+submitBtn.addEventListener("click", function(){
+
+  let formElt = document.getElementById("form");
+  formElt.addEventListener("submit" function(e){
+    e.preventDefault();
+  })
+
+  let contact = {
+    "lastName" : document.getElementById("inputName").value,
+    "firstName" : document.getElementById("inputFirstName").value,
+    "address" : document.getElementById("inputAddress").value,
+    "code" : document.getElementById("inputPostcode").value,
+    "city" : document.getElementById("inputCity").value,
+    "email" : document.getElementById("inputEmail").value
+  }
+
+  let data = {
+    "products" : products,
+    "contact" : contact,
+  }
+
+  ajaxPost('https://oc-p5-api.herokuapp.com/api/cameras/order', data)
+  .then(function(response) {
+    let orderId = JSON.parse(response);
+    localStorage.setItem("orderID", orderId.orderId);
+    localStorage.setItem("totalAmount", spreadElt.textContent);
+    window.location.assign("../confirmation.html");
+
+  })
+  .catch(function (error){
+    console.log(error);
+  })
+})

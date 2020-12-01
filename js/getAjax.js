@@ -50,8 +50,29 @@ fetch('https://oc-p5-api.herokuapp.com/api/cameras')
     newCardImg.setAttribute("src", data[i].imageUrl);
     newCardPrice.textContent = data[i].price/100 + "€";
     newCardTexte.textContent = data[i].description;
-    
+
 }
 
 })
 .catch(error => console.error(error))
+
+// Requête POST pour envoyer les données au serveur //
+
+function ajaxPost(url, data){
+  return new Promise(function(resolve, reject){
+    let request = new XMLHttpRequest();
+
+    request.onreadystatechange = function(){
+      if(request.readyState === 4){
+        if(request.status === 200){
+          resolve(responseText);
+        } else {
+          reject(request);
+        }
+      }
+    }
+
+    request.open("POST", url);
+    request.send(JSON.stringify(data));
+  })
+}
