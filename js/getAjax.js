@@ -1,6 +1,6 @@
 // Utilisation de fetch pour simplifier l'utilisation des promesses //
 
-fetch('https://oc-p5-api.herokuapp.com/api/cameras')
+ fetch('https://oc-p5-api.herokuapp.com/api/cameras')
 .then(response => response.json())
 .then(data => {
 
@@ -56,6 +56,7 @@ fetch('https://oc-p5-api.herokuapp.com/api/cameras')
 })
 .catch(error => console.error(error))
 
+
 // Requête POST pour envoyer les données au serveur //
 
 function ajaxPost(url, data){
@@ -64,8 +65,8 @@ function ajaxPost(url, data){
 
     request.onreadystatechange = function(){
       if(request.readyState === 4){
-        if(request.status === 200){
-          resolve(responseText);
+        if(request.status === 201){
+          resolve(request.responseText);
         } else {
           reject(request);
         }
@@ -73,6 +74,7 @@ function ajaxPost(url, data){
     }
 
     request.open("POST", url);
-    request.send(JSON.stringify(data));
+    request.setRequestHeader("Content-Type", "application/json"); // Indique que l'on va encoyer un format JSON
+    request.send(JSON.stringify(data)); // Converti et envoie data au format JSON
   })
 }

@@ -20,11 +20,76 @@
   </head>
 
   <body>
-  <p>Coucou</p>
-<!-- Début de la navbar -->
+  <!-- Début de la navbar -->
+  <header>
+    <div class="contrainer-fluid pink fixed-top">
+      <div class="container">
+        <div class="row">
+          <nav class="col navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand" href="index.html">
+              <img src="img/logo.png" alt="logo Orinoco" style="heigth:220px; width:180px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarContent" class="collapse navbar-collapse">
+              <ul class="navbar-nav">
+                <li class="navbar-item active">
+                  <a class="nav-link" href="index.html">Nos produits</a>
+                </li>
+                <li class="navbar-item">
+                  <a class="nav-link" href="panier.html">Panier</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <!-- Début du jumbotron -->
+      <div class="row">
+        <div class="col">
+          <div class="jumbotron">
+            <h1 class="display-4 text-center">Nous vous remercions de votre achat.</h1>
+            <p class="lead text-center">A très bientôt chez Orinico !</p>
+            <hr class="my-4">
+            <p id="total"></p>
+            <p id="orderId"></p>
+          </div>
+        </div>
+      </div>
+      <!-- Fin du jumbotron -->
+    </div>
+  </section>
+
+
+
+  <footer>
+    <div class="container-fluid pink">
+      <div class="container">
+        <div class="row footer mt-3">
+          <div class="col">
+            <ul class="list-inline text-center my-auto p-2 ">
+              <li class="list-inline-item"><a class="text-light" href="#">À propos</a></li>
+              <li class="list-inline-item">&middot;</li>
+              <li class="list-inline-item"><a class="text-light"href="#">Vie privée</a></li>
+              <li class="list-inline-item">&middot;</li>
+              <li class="list-inline-item"><a class="text-light"href="#">Conditions d'utilisations</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Fin de la navbar -->
   </body>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/confirmation.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
