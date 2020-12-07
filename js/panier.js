@@ -91,3 +91,13 @@ submitBtn.addEventListener("click", function(){ // Ajout d'un listener au clique
 })
 
 fillBasket();
+
+// Bouton pour vider entiérement le panier aprèss confirmation de l'utilisateur //
+let clearBtn = document.getElementById("clearBasket");
+
+clearBtn.addEventListener("click", function(){
+    if (confirm("Voulez-vous vider votre panier ?")) {
+      localStorage.clear();
+      window.location.reload();
+  }
+})

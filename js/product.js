@@ -21,7 +21,7 @@ let imgElt = document.getElementById("img");
 imgElt.src = data.imageUrl;
 
 let priceElt = document.getElementById("price");
-priceElt.textContent = data.price/100 +"€";
+priceElt.textContent = data.price/100 +"€"; 
 
 let descriptionElt = document.getElementById("description");
 descriptionElt.textContent = data.description;
