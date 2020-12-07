@@ -56,7 +56,7 @@ submitBtn.addEventListener("click", function(){ // Ajout d'un listener au clique
   let formElt = document.getElementById("form"); // Ciblage du formulaire
   formElt.addEventListener("submit", function(e){ // Ajout d'un listener au moment de soumettre le formulaire
     e.preventDefault(); // Empêche le formulaire de se réinitialiser et de recharger la page
-    window.location.assign("confirmation.html")
+
   })
 
   let contact = { // Création du l'obket contact qui sera envoyé dans data
@@ -84,6 +84,7 @@ submitBtn.addEventListener("click", function(){ // Ajout d'un listener au clique
     localStorage.setItem("orderId", orderId.orderId);  //Je crée une clé "orderID" et lui attribut la valeur id de orderID
     let sumElt = document.getElementById("sum");
     localStorage.setItem("total", sumElt.textContent); // Je crée une clée "total" et lui attribut la valeur spread (voir plus haut)
+    window.location.assign("confirmation.html");
   })
   .catch(function (error){
     console.log(error); //En cas d'erreur, log un message d'erreur
@@ -93,7 +94,7 @@ submitBtn.addEventListener("click", function(){ // Ajout d'un listener au clique
 fillBasket();
 
 // Bouton pour vider entiérement le panier aprèss confirmation de l'utilisateur //
-let clearBtn = document.getElementById("clearBasket");
+ let clearBtn = document.getElementById("clearBasket");
 
 clearBtn.addEventListener("click", function(){
     if (confirm("Voulez-vous vider votre panier ?")) {
