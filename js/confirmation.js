@@ -3,3 +3,5 @@ totalElt.textContent = "Coût total de votre commande : " + localStorage.getItem
 
 let orderIdElt = document.getElementById("orderId");
 orderId.textContent = "Numéro d'identifiant de votre commande : " + localStorage.getItem("orderId");
+
+localStorage.clear();
