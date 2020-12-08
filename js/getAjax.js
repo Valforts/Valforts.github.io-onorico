@@ -48,7 +48,7 @@
     let price = data[i];
     newCardTitle.textContent = data[i].name;
     newCardImg.setAttribute("src", data[i].imageUrl);
-    newCardPrice.textContent = data[i].price/100 + "€";
+    newCardPrice.textContent = (data[i].price/100).toFixed(2) + "€";
     newCardTexte.textContent = data[i].description;
 
 }

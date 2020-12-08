@@ -35,7 +35,7 @@ function fillBasket(){
         sumElt.textContent = sommeTotal + "€";
 
         let spreadElt = document.getElementById("spread");
-        let spread =  Number.parseFloat(sommeTotal/3).toPrecision(6);
+        let spread =  Number.parseFloat(sommeTotal/3).toFixed(2);
         spreadElt.textContent = "3X " + spread;
   }
 }
