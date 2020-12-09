@@ -10,6 +10,10 @@ function fillBasket(){
       let unitCostElt = document.createElement("td");
       let quantityElt = document.createElement("td");
       let priceElt = document.createElement("td");
+      let deletElt = document.createElement("td");
+      let crosstElt = document.createElement("button");
+      let spanElt = document.createElement("span");
+
 
       tbodyElt.appendChild(trElt);
       imgElt.appendChild(img);
@@ -18,6 +22,7 @@ function fillBasket(){
       trElt.appendChild(unitCostElt);
       trElt.appendChild(quantityElt);
       trElt.appendChild(priceElt);
+      trElt.appendChild(deletElt);
 
 
       img.src = (JSON.parse(localStorage.getItem("basketContent"))[i].url);
@@ -27,6 +32,16 @@ function fillBasket(){
       quantityElt.textContent = (JSON.parse(localStorage.getItem("basketContent"))[i].quantity);
       priceElt.textContent = parseInt((JSON.parse(localStorage.getItem("basketContent"))[i].price))
       *(JSON.parse(localStorage.getItem("basketContent"))[i].quantity) +"€";
+
+      deletElt.appendChild(crosstElt);
+      crosstElt.classList.add("close");
+      crosstElt.type="button";
+      crosstElt.setAttribute("aria-label","Close");
+      crosstElt.appendChild(spanElt);
+      spanElt.textContent="x";
+      spanElt.setAttribute("aria-hidden","true");
+
+
 
 
         let sumElt = document.getElementById("sum");
@@ -101,8 +116,6 @@ fillBasket();
       window.location.assign("index.html")
     }
   })
-
-
 
 
 // Bouton pour vider entiérement le panier aprèss confirmation de l'utilisateur //
