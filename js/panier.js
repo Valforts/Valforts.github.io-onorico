@@ -97,7 +97,6 @@ fillBasket();
 
       ajaxPost('https://oc-p5-api.herokuapp.com/api/cameras/order', data) //Appel de la fonctione AjaxPost
       .then(function(response) { // reponse récupère resolve (Donc le responseText) quand elle est disponible
-        console.log("coucouuuuuu");
         let orderId = JSON.parse(response); // OrderId contient la reponse en Objet JS
         console.log(orderId.orderId);
         localStorage.setItem("orderId", orderId.orderId);  //Je crée une clé "orderID" et lui attribut la valeur id de orderID
